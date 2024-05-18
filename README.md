@@ -17,6 +17,12 @@ To address the preference of 60% of Indonesians for foreign products, as reporte
 ## Project Goal
 Develop and launch **Local.Ind**, an e-commerce platform aimed at promoting local fashion brands in Indonesia, bridging the gap between consumer preferences and local offerings, while enhancing market visibility and cultural appreciation within a one-month timeframe.
 
+
+## Timelines
+![Timelines](Image/Timelines.png)
+
+
+
 ## Deliverables
 ### Mobile Development (MD)
 - **Create Flowchart for Application:** 2 days
