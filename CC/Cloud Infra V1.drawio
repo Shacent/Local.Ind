@@ -1,0 +1,40 @@
+<mxfile host="app.diagrams.net" modified="2024-05-23T12:01:15.036Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="2rU927LSU0ZLs7OGqMy0" version="24.4.6" type="device">
+  <diagram name="Page-1" id="MvjfGvMokN_2Q0bnOkXj">
+    <mxGraphModel dx="1434" dy="738" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="L5Bt8gViOkj_iNYrqd-7-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="L5Bt8gViOkj_iNYrqd-7-4" target="L5Bt8gViOkj_iNYrqd-7-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="L5Bt8gViOkj_iNYrqd-7-4" value="Backend" style="swimlane;" vertex="1" parent="1">
+          <mxGeometry x="290" y="250" width="130" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="L5Bt8gViOkj_iNYrqd-7-5" value="Cloud Run" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="L5Bt8gViOkj_iNYrqd-7-4">
+          <mxGeometry x="25" y="60" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="L5Bt8gViOkj_iNYrqd-7-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="L5Bt8gViOkj_iNYrqd-7-6" target="L5Bt8gViOkj_iNYrqd-7-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="L5Bt8gViOkj_iNYrqd-7-6" value="Cloud SQL" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="230" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="L5Bt8gViOkj_iNYrqd-7-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="L5Bt8gViOkj_iNYrqd-7-7" target="L5Bt8gViOkj_iNYrqd-7-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="L5Bt8gViOkj_iNYrqd-7-7" value="Cloud Storage" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="320" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="L5Bt8gViOkj_iNYrqd-7-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="L5Bt8gViOkj_iNYrqd-7-11" target="L5Bt8gViOkj_iNYrqd-7-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="L5Bt8gViOkj_iNYrqd-7-11" value="Cloud Armor" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="280" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="L5Bt8gViOkj_iNYrqd-7-15" value="Client" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="670" y="280" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
