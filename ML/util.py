@@ -11,7 +11,6 @@ path = "C:\Kuliah\Bangkit\CAPSTONE\Local.Ind\ML\DATASETS LOCAL.IDN FIX.csv"
 
 def get_dataframe(path):
     df = pd.read_csv(path)
-    df = df.rename(columns={'harga (RP)' : 'harga'})
     # Gabungkan kolom-kolom yang relevan menjadi satu string untuk setiap item
     df['combined_features'] = (df['nama_item'] + ' ' + df['katagory'] + ' ' + df['Brand']).str.lower()
     return df
