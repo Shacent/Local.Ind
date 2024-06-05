@@ -6,8 +6,8 @@ import matplotlib.image as mpimg
 import textwrap
 import os
 
-image_dir = "C:\Kuliah\Bangkit\CAPSTONE\Local.Ind\ML\IMAGES_FIX"
-path = "C:\Kuliah\Bangkit\CAPSTONE\Local.Ind\ML\DATASETS LOCAL.IDN FIX.csv"
+image_dir = ".\ML\IMAGES_FIX"
+path = ".\ML\DATASETS LOCAL.IDN FIX.csv"
 
 def get_dataframe(path):
     df = pd.read_csv(path)
