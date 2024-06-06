@@ -9,7 +9,7 @@ import pandas as pd
 # Load pre-trained model
 model = load_model("model_predict_next_words.h5")
 
-df = pd.read_csv('API_DS.csv')
+df = pd.read_csv('https://raw.githubusercontent.com/Shacent/Local.Ind/main/ML/NextWords/API_DS.csv')
 # Load the CSV files
 df_items = df['Fixedd'].tolist()  # Convert Series to list
 tokenizer = Tokenizer()
