@@ -32,15 +32,12 @@ def preprocess_query(query):
 def get_recommendations_b(query, df=df, cosine_sim=cosine_sim, top_n=5):
     # Preprocess input query
     query = preprocess_query(query)
-    print(f"Preprocessed Query: {query}")  # Debug statement
-
+    
     # Include query as part of data for similarity calculation
     query_vec = tfidf.transform([query])
-    print(f"Query Vector Shape: {query_vec.shape}")  # Debug statement
 
     # Calculate cosine similarity between query and all items in the data
     cosine_sim_query = linear_kernel(query_vec, tfidf_matrix).flatten()
-    print(f"Cosine Similarity Scores: {cosine_sim_query}")  # Debug statement
 
     # Check if all similarity scores are zero
     if not cosine_sim_query.any():
