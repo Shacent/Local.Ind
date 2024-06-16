@@ -20,12 +20,26 @@ tfidf_matrix = tfidf.fit_transform(df['combined_features'])
 # Calculate cosine similarity between items
 cosine_sim = linear_kernel(tfidf_matrix, tfidf_matrix)
 
-# Function to preprocess query
-def preprocess_query(query):
-    # Remove non-alphabetic characters
+def preprocess_query(query, no_items_found=False):
+    # Menghilangkan karakter non-alfabetik
     query = re.sub(r'[^a-zA-Z\s]', '', query)
-    # Convert to lowercase
-    query = query.lower()
+    
+    query = re.sub(r'(.)\1+', r'\1', query)
+
+    query_lower = query.lower()
+
+    if no_items_found:
+        if 'exe' in query_lower:
+            return 'executive'
+        elif 'er' in query_lower:
+            return 'erigo'
+        elif 'ei' in query_lower:
+            return 'eiger'
+
+    query = re.sub(r'exe', 'executive', query_lower)
+    query = re.sub(r'er', 'erigo', query_lower)
+    query = re.sub(r'ei', 'eiger', query_lower)
+    
     return query
 
 # Function to get recommendations
