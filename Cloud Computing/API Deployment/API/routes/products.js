@@ -41,10 +41,8 @@ router.get("/", async (req, res) => {
             product.ImgUrl = imgUrl;
         }
 
-        // Calculate total pages
         const totalPages = Math.ceil(count / limit);
 
-        // Return the paginated results and metadata
         res.json({
             products,
             pagination: {

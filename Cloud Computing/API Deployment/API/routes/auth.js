@@ -16,13 +16,11 @@ const generateUUID = () => {
     return crypto.randomUUID();
 };
 
-// Registration route
 router.post("/register", async (req, res) => {
     const { fullName, address, phone, email, password, isBrand } = req.body;
     const Email = email;
 
     try {
-        // Check if the email already exists
         const existingCustomer = await knex("Customers")
             .select("*")
             .where({ Email })
@@ -31,15 +29,12 @@ router.post("/register", async (req, res) => {
             return res.status(409).json({ error: "Email already exists" });
         }
 
-        // Hash the password
         const hashedPassword = hashPassword(password);
 
-        // Generate a unique CustomerId using UUID
         const customerId = generateUUID();
 
         const pictureUrl = await getSignedUrl();
 
-        // Create a new customer
         const newCustomer = {
             CustomerId: customerId,
             FullName: fullName,
@@ -53,7 +48,6 @@ router.post("/register", async (req, res) => {
             isBrand: isBrand || false,
         };
 
-        // Insert the new customer
         await knex("Customers").insert(newCustomer);
 
         res.status(201).json({ message: "Customer registered successfully" });

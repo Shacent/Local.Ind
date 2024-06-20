@@ -4,7 +4,6 @@ const knexConfig = require("../databases/knex")[process.env.NODE_ENV || "develop
 const knex = require("knex")(knexConfig);
 const getProductSignedUrl = require("../databases/buckets/productImg");
 
-// Fetch data from the database
 async function fetchDataFromDB() {
     try {
         return await knex
@@ -18,7 +17,6 @@ async function fetchDataFromDB() {
     }
 }
 
-// Preprocess data
 async function preprocessData(data) {
     const df = data.map((row) => ({
         ProductId: row.ProductId,
@@ -45,7 +43,6 @@ async function preprocessData(data) {
     return { vectorizer, tfidfMatrix, df };
 }
 
-// Preprocess query
 function preprocessQuery(query, noItemsFound = false) {
     query = query.replace(/[^a-zA-Z\s]/g, '');
     query = query.replace(/(.)\1+/g, '$1');
@@ -57,19 +54,13 @@ function preprocessQuery(query, noItemsFound = false) {
         if (query.includes('ei')) return 'eiger';
     }
 
-    // query = query.replace(/exe/g, 'executive');
-    // query = query.replace(/er/g, 'erigo');
-    // query = query.replace(/ei/g, 'eiger');
-
     return query;
 }
 
-// Get recommendations
 function getRecommendations(query, vectorizer, tfidfMatrix, df, topN = 5) {
     query = preprocessQuery(query);
-    console.log("Preprocessed query:", query);  // Debug log
+    console.log("Preprocessed query:", query);  
 
-    // First, try to find exact matches for brand names
     const exactMatches = df.filter(item => 
         item.combined_features.toLowerCase().includes(query.toLowerCase())
     );
@@ -93,12 +84,11 @@ function getRecommendations(query, vectorizer, tfidfMatrix, df, topN = 5) {
         const normB = Math.sqrt(
             queryVector.reduce((sum, val) => sum + val * val, 0)
         );
-        return dotProduct / (normA * normB) || 0; // Return 0 if NaN
+        return dotProduct / (normA * normB) || 0; 
     });
 
-    console.log("Cosine similarities:", cosineSimQuery.slice(0, 5));  // Debug log
+    console.log("Cosine similarities:", cosineSimQuery.slice(0, 5));  
 
-    // Check if all similarity scores are very close to zero
     if (cosineSimQuery.every(score => Math.abs(score) < 1e-10)) {
         console.log("No similar items found.");
         return ["barang tidak ditemukan"];

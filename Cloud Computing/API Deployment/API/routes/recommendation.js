@@ -4,7 +4,6 @@ const recommendationService = require("../AI/recommendationService");
 
 let data, vectorizer, tfidfMatrix, df;
 
-// Initialize data on server start
 (async function initializeData() {
     try {
         data = await recommendationService.fetchDataFromDB();
@@ -34,7 +33,6 @@ router.get("/", async (req, res) => {
         );
 
         if (recommendedIds[0] === "barang tidak ditemukan") {
-            // Try again with more aggressive preprocessing
             recommendedIds = recommendationService.getRecommendations(
                 query,
                 vectorizer,

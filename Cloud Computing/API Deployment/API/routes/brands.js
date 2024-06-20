@@ -17,7 +17,6 @@ router.get("/", async (req, res) => {
     try {
         const brands = await knex("Brands").select("*");
 
-        // Generate signed URLs for each brand's logo
         for (const brand of brands) {
             const logoUrl = await getBrandSignedUrl(
                 brand.Logo,
@@ -51,7 +50,7 @@ router.post("/", upload.single("logo"), async (req, res) => {
             BrandId: brandId,
             Address: address,
             BrandName: brandName,
-            Logo: logoPath, // Store the relative path
+            Logo: logoPath, 
             CreatedAt: new Date(),
             UpdatedAt: new Date(),
         });

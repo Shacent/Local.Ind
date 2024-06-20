@@ -9,9 +9,9 @@ const fileName = "user-picture/user.jpg";
 
 const getSignedUrl = async () => {
     const options = {
-        version: "v4", // Using the latest version of signed URLs
-        action: "read", // Specify the desired action (e.g., 'read', 'write', 'delete')
-        expires: Date.now() + 15 * 60 * 1000, // Expiration time (e.g., 15 minutes from now)
+        version: "v4",
+        action: "read", 
+        expires: Date.now() + 15 * 60 * 1000, 
     };
 
     // Get a reference to the file

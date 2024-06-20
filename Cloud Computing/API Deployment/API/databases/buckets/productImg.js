@@ -27,7 +27,6 @@ const getProductSignedUrl = async (
             metadata: { contentType: picture.mimetype },
         });
 
-        // Return the newly created file path for later use
         return fileName;
     } else {
         const fileName = imgPath || defaultLogoName;
@@ -37,7 +36,7 @@ const getProductSignedUrl = async (
     const options = {
         version: "v4",
         action,
-        expires: Date.now() + 15 * 60 * 1000, // 15 minutes from now
+        expires: Date.now() + 15 * 60 * 1000, 
     };
 
     const [signedUrl] = await file.getSignedUrl(options);

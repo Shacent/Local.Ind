@@ -16,7 +16,6 @@ router.post("/", authMiddleware, async (req, res) => {
         const { productId } = req.body;
         const customerId = req.customerId;
 
-        // Add the item to the cart
         const wishlistItem = {
             WishlistId: generateUUID(),
             CustomerId: customerId,
