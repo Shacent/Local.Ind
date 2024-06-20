@@ -5,19 +5,16 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 import numpy as np
 import pandas as pd
 
-
-# Load pre-trained model
 model = load_model("model_predict_next_words.h5")
 
 df = pd.read_csv('https://raw.githubusercontent.com/Shacent/Local.Ind/main/ML/NextWords/API_DS.csv')
-# Load the CSV files
-df_items = df['Fixedd'].tolist()  # Convert Series to list
+
+df_items = df['Fixedd'].tolist()  
 tokenizer = Tokenizer()
 tokenizer.fit_on_texts(df_items)
 total_words = len(tokenizer.word_index) + 1
 
-# Define maximum sequence length based on your training
-max_sequence_len = 10  # replace with your actual max sequence length
+max_sequence_len = 10  
 
 app = Flask(__name__)
 
